@@ -10,11 +10,6 @@ export default function VerifyMBIForm() {
     async function displayMBIVerification(event) {
         event.preventDefault();
 
-        if (mbi.length === 0) {
-            alert('MBI Verification Field cannot be empty');
-            return;
-        }
-
         if (prevMBI === mbi) {
             return;
         }
@@ -34,9 +29,9 @@ export default function VerifyMBIForm() {
     return (
         <div>
             <form onSubmit={displayMBIVerification}>
-                <input placeholder="Enter a MBI to Validate" type="text" value={mbi} onChange={(text) => setMBI(text.target.value.toUpperCase())} />
+                <input placeholder="Enter a MBI" type="text" value={mbi} onChange={(text) => setMBI(text.target.value.toUpperCase())} />
 
-                <button type="submit">
+                <button type="submit" disabled={mbi.length === 0}>
                     Verify
                 </button>
             </form>

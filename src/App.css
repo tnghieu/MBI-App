@@ -11,10 +11,11 @@
 }
 
 button {
-  height: 50px;
+  height: 49px;
 }
 
 input {
-  height: 44px;
-  width: 250px;
+  font-size: 14px;
+  height: 42px;
+  width: 125px;
 }
